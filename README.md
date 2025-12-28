@@ -28,6 +28,14 @@ Charts with a time axis showing changes over a period:
 - Bar charts showing temporal changes
 - Tables with time-based data
 
+**Type Definition:**
+```typescript
+type TimeBased = {
+  timeMode: 'dynamic';
+  dataBehavior: 'time_based';
+};
+```
+
 ### Categorical (Static)
 Charts showing comparisons at a single point in time:
 - Pie charts
@@ -35,6 +43,16 @@ Charts showing comparisons at a single point in time:
 - Tables with categorical data
 - Process diagrams
 - Maps
+
+**Type Definition:**
+```typescript
+type Categorical = {
+  timeMode: 'static';
+  dataBehavior: 'categorical';
+};
+```
+
+These strict types ensure that timeMode and dataBehavior are always consistent, preventing invalid configurations at compile time.
 
 ## Valid Mixed Combinations
 
