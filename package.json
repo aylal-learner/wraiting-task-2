@@ -1,0 +1,30 @@
+{
+  "name": "ielts-chart-types",
+  "version": "1.0.0",
+  "description": "TypeScript type definitions for IELTS Writing Task 1 chart generator",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "tsc --noEmit",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "ielts",
+    "typescript",
+    "charts",
+    "types",
+    "writing-task-1"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ]
+}
