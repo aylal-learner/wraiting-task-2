@@ -1,26 +1,41 @@
 {
   "name": "ielts-chart-types",
   "version": "1.0.0",
-  "description": "TypeScript type definitions for IELTS Writing Task 1 chart generator",
+  "description": "TypeScript type definitions for IELTS Writing Task 1 chart generator with Next.js frontend",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
+    "dev": "next dev",
+    "build": "tsc -p tsconfig.types.json && next build",
+    "build:types": "tsc -p tsconfig.types.json",
+    "start": "next start",
     "lint": "tsc --noEmit",
-    "test": "npm run build && node --test dist/**/*.test.js"
+    "test": "npm run build:types && node --test dist/**/*.test.js"
   },
   "keywords": [
     "ielts",
     "typescript",
     "charts",
     "types",
-    "writing-task-1"
+    "writing-task-1",
+    "next.js"
   ],
   "author": "",
   "license": "MIT",
+  "dependencies": {
+    "next": "^14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "lucide-react": "^0.300.0"
+  },
   "devDependencies": {
     "@types/node": "^20.10.6",
-    "typescript": "^5.3.3"
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18",
+    "typescript": "^5.3.3",
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.32",
+    "autoprefixer": "^10.4.16"
   },
   "files": [
     "dist",
