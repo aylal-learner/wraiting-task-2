@@ -28,6 +28,14 @@ Charts with a time axis showing changes over a period:
 - Bar charts showing temporal changes
 - Tables with time-based data
 
+**Type Definition:**
+```typescript
+type TimeBased = {
+  timeMode: 'dynamic';
+  dataBehavior: 'time_based';
+};
+```
+
 ### Categorical (Static)
 Charts showing comparisons at a single point in time:
 - Pie charts
@@ -35,6 +43,16 @@ Charts showing comparisons at a single point in time:
 - Tables with categorical data
 - Process diagrams
 - Maps
+
+**Type Definition:**
+```typescript
+type Categorical = {
+  timeMode: 'static';
+  dataBehavior: 'categorical';
+};
+```
+
+These strict types ensure that timeMode and dataBehavior are always consistent, preventing invalid configurations at compile time.
 
 ## Valid Mixed Combinations
 
@@ -247,12 +265,41 @@ const mapData: IELTSChartData = {
 
 ## Utility Functions
 
-The module provides several utility functions:
+### Type Utilities
 
 - `isValidMixedCombination(chart1, chart2)` - Check if two chart types can be mixed
 - `getChartDataBehavior(chartType, timeMode)` - Get the data behavior for a chart
 - `canChartBeTimeBased(chartType)` - Check if a chart type supports time-based data
 - `canChartBeCategorical(chartType)` - Check if a chart type supports categorical data
+
+### Data Generator
+
+The module includes a powerful random data generator:
+
+```typescript
+import { generateChartData, GenerationConfig, ChartType } from './src';
+
+const chartData = generateChartData({
+  chartType: ChartType.PIE_CHART,
+  categoryCount: 5,
+});
+
+// Generated data includes:
+// - Random but realistic IELTS topics
+// - Proper data formatting
+// - Validation-compliant structure
+// - Pie charts always sum to 100%
+```
+
+**Features:**
+- ✅ Generates all chart types (Line, Bar, Pie, Table, Mixed, Process, Map)
+- ✅ Realistic IELTS topics and values
+- ✅ Smooth trends for time-based data
+- ✅ Pie charts guaranteed to sum to 100%
+- ✅ Mixed charts share consistent axes
+- ✅ Configurable categories, time periods, and difficulty
+
+See `GENERATOR_GUIDE.md` for complete documentation.
 
 ## Type Safety
 
