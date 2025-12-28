@@ -7,7 +7,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "tsc --noEmit",
-    "test": "echo \"No tests yet\" && exit 0"
+    "test": "npm run build && node --test dist/**/*.test.js"
   },
   "keywords": [
     "ielts",
