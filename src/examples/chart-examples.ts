@@ -343,7 +343,7 @@ export const mapDevelopmentExample: IELTSChartData = {
     type: ChartType.MAP,
     mapType: MapType.DEVELOPMENT,
     isMixed: false,
-    timeMode: 'dynamic',
+    timeMode: 'static',
     dataBehavior: 'categorical',
     categories: [],
     datasets: [],
